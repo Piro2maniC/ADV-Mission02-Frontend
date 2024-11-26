@@ -3,9 +3,11 @@ import styles from "../../../../../styles/HomePageAPI02.module.css";
 
 function API03() {
   return (
-    <div>
-      <div>API 03</div>
-    </div>
+    <>
+      <div>
+        <div>API 03</div>
+      </div>
+    </>
   );
 }
 
