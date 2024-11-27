@@ -76,7 +76,7 @@ const API02 = () => {
         {riskRating !== null && (
           <p className={styles.result}>
             Your Risk Rating is:
-            <span className={styles.resultEmphasis}> {riskRating}/5</span>
+            <span className={styles.resultEmphasise}> {riskRating}/5</span>
           </p>
         )}
       </form>

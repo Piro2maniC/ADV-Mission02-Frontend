@@ -80,16 +80,23 @@ function API03() {
           <button type="submit" className={styles.button}>
             Calculate
           </button>
+
+          {error && <p className={styles.error}>{error}</p>}
+
+          {quote !== null && (
+            <p className={styles.result}>
+              Your quote is:
+              <span className={styles.resultEmphasise}>
+                ${quote.quoteYearly}
+              </span>
+              <h5 className={styles.h5}>Annual Premium</h5>
+              <span className={styles.resultEmphasise}>
+                ${quote.quoteMonthly}
+              </span>
+              <h5 className={styles.h5}>Monthly Premium</h5>
+            </p>
+          )}
         </form>
-
-        {error && <p className={styles.error}>{error}</p>}
-
-        {quote !== null && (
-          <p className={styles.result}>
-            Your quote is: ${quote.quoteYearly} yearly, and $
-            {quote.quoteMonthly} monthly
-          </p>
-        )}
       </div>
     </>
   );
