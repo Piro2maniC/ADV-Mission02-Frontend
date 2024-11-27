@@ -76,15 +76,16 @@ const CarValueController = () => {
         <button type="submit" className={styles.button}>
           Calculate
         </button>
+
+        {error && <p className={styles.error}>{error}</p>}
+
+        {numericValue !== null && (
+          <p className={styles.result}>
+            The value of your car is:{" "}
+            <span className={styles.resultEmphasise}>${numericValue}</span>
+          </p>
+        )}
       </form>
-
-      {error && <p className={styles.error}>{error}</p>}
-
-      {numericValue !== null && (
-        <p className={styles.result}>
-          The value if your car is: ${numericValue}
-        </p>
-      )}
     </div>
   );
 };

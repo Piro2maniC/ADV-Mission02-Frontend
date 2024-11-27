@@ -49,10 +49,12 @@ function API03() {
   return (
     <>
       <div className={styles.container}>
-        <h1>Car Quote Calculater </h1>
+        <h1 className={styles.h1}>Car Quote Calculater </h1>
         <form onSubmit={handleFormSubmit} className={styles.form}>
           <div className={styles.inputGroup}>
-            <label htmlFor="word">Car Value:</label>
+            <label className={styles.label} htmlFor="word">
+              Car Value:
+            </label>
             <input
               type="number"
               id="word"
@@ -63,7 +65,9 @@ function API03() {
             />
           </div>
           <div className={styles.inputGroup}>
-            <label htmlFor="year">Risk Rating:</label>
+            <label className={styles.label} htmlFor="year">
+              Risk Rating:
+            </label>
             <input
               type="number"
               id="year"
@@ -76,16 +80,23 @@ function API03() {
           <button type="submit" className={styles.button}>
             Calculate
           </button>
+
+          {error && <p className={styles.error}>{error}</p>}
+
+          {quote !== null && (
+            <p className={styles.result}>
+              Your quote is:
+              <span className={styles.resultEmphasise}>
+                ${quote.quoteYearly}
+              </span>
+              <h5 className={styles.h5}>Annual Premium</h5>
+              <span className={styles.resultEmphasise}>
+                ${quote.quoteMonthly}
+              </span>
+              <h5 className={styles.h5}>Monthly Premium</h5>
+            </p>
+          )}
         </form>
-
-        {error && <p className={styles.error}>{error}</p>}
-
-        {quote !== null && (
-          <p className={styles.result}>
-            Your quote is: ${quote.quoteYearly} yearly, and $
-            {quote.quoteMonthly} monthly
-          </p>
-        )}
       </div>
     </>
   );
