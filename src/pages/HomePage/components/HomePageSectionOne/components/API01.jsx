@@ -45,10 +45,12 @@ const CarValueController = () => {
 
   return (
     <div className={styles.container}>
-      <h1>Car Value Calculator</h1>
+      <h1 className={styles.h1}>Car Value Calculator</h1>
       <form onSubmit={handleFormSubmit} className={styles.form}>
         <div className={styles.inputGroup}>
-          <label htmlFor="word">Model:</label>
+          <label htmlFor="word" className={styles.label}>
+            Model:
+          </label>
           <input
             type="text"
             id="word"
@@ -59,7 +61,9 @@ const CarValueController = () => {
           />
         </div>
         <div className={styles.inputGroup}>
-          <label htmlFor="year">Year:</label>
+          <label htmlFor="year" className={styles.label}>
+            Year:
+          </label>
           <input
             type="number"
             id="year"
@@ -72,15 +76,16 @@ const CarValueController = () => {
         <button type="submit" className={styles.button}>
           Calculate
         </button>
+
+        {error && <p className={styles.error}>{error}</p>}
+
+        {numericValue !== null && (
+          <p className={styles.result}>
+            The value of your car is:{" "}
+            <span className={styles.resultEmphasise}>${numericValue}</span>
+          </p>
+        )}
       </form>
-
-      {error && <p className={styles.error}>{error}</p>}
-
-      {numericValue !== null && (
-        <p className={styles.result}>
-          The value if your car is: ${numericValue}
-        </p>
-      )}
     </div>
   );
 };
