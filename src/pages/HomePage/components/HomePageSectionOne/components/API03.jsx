@@ -40,6 +40,7 @@ function API03() {
       if (response.ok) {
         setquote(data);
       } else {
+        setquote({ car_value: "0", risk_rating: "0" });
         setError(data.error || "An error occurred.");
       }
     } catch (err) {
@@ -49,10 +50,13 @@ function API03() {
   return (
     <>
       <div className={styles.container}>
-        <h1 className={styles.h1}>Car Quote Calculater </h1>
+
+
+        <h1 className={styles.h1}>Car Quote Calculator </h1>
         <form onSubmit={handleFormSubmit} className={styles.form}>
           <div className={styles.inputGroup}>
             <label className={styles.label} htmlFor="word">
+
               Car Value:
             </label>
             <input
@@ -65,7 +69,9 @@ function API03() {
             />
           </div>
           <div className={styles.inputGroup}>
+
             <label className={styles.label} htmlFor="year">
+
               Risk Rating:
             </label>
             <input
