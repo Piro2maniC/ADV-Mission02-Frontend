@@ -40,6 +40,7 @@ function API03() {
       if (response.ok) {
         setquote(data);
       } else {
+        setquote({ car_value: "0", risk_rating: "0" });
         setError(data.error || "An error occurred.");
       }
     } catch (err) {
