@@ -81,7 +81,7 @@ const CarValueController = () => {
 
         {numericValue !== null && (
           <p className={styles.result}>
-            The value of your car is:{" "}
+            The value of your car is:
             <span className={styles.resultEmphasise}>${numericValue}</span>
           </p>
         )}
